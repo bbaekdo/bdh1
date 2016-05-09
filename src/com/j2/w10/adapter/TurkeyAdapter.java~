@@ -1,0 +1,12 @@
+package com.j2.w10.adapter;
+
+public class TurkeyAdapter implements Duck {
+  Turkey turkey;
+  public TurkeyAdapter(Turket turkey) {
+    this.turkey=turkey;
+  }
+  
+  public void quack() {
+    gobble();
+  }
+}

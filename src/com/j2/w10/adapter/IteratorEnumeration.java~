@@ -1,0 +1,14 @@
+package com.j2.w10.adapter;
+
+public class IteratorEnumeration implements Enumeration {
+  Iterator iterator;
+  public IteratorEnumeration(Iterator iterator) {
+    this.iterator=iterator;
+  }
+  public boolean hasMoreElements() {
+    return iterator.hasNext();
+  }
+  public Object nextElements() {
+    return iterator.next();
+  }
+}
