@@ -11,6 +11,9 @@ public class SoldState implements State {
   public void ejectQuarter() {
     System.out.println("Sorry, you already turned the crank");
   }
+  public void quarterError() {
+    System.out.println("You Inserted wrong quarter. Try again with other quarter.");
+  }
   public void turnCrank() {
     System.out.println("Turning twice doesn't get you another gumball!");
   }
@@ -23,4 +26,8 @@ public class SoldState implements State {
       gumballMachine.setState(gumballMachine.getSoldOutState());
     }
   }
+  public String toString() {
+    return "dispensing a gumball";
+  }
+
 }

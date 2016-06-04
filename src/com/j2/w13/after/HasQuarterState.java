@@ -14,6 +14,9 @@ public class HasQuarterState implements State {
     System.out.println("Quarter returned");
     gumballMachine.setState(gumballMachine.getNoQuarterState());
   }
+  public void quarterError() {
+    System.out.println("You Inserted wrong quarter. Try again with other quarter.");
+  }
   public void turnCrank() {
     System.out.println("You turned...");
     gumballMachine.setState(gumballMachine.getSoldState());
@@ -21,4 +24,8 @@ public class HasQuarterState implements State {
   public void dispense() {
     System.out.println("No gumball dispensed");
   }
+  public String toString() {
+    return "waiting for turn of crank";
+  }
+
 }

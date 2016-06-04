@@ -10,6 +10,8 @@ public class GumballMachine {
   // final static int SOLD=3;
   State soldState;
   
+  State outofOrderState;
+  
   // int state = SOLD_OUT;
   State state=soldOutState;
   int count=0;
@@ -19,6 +21,7 @@ public class GumballMachine {
     noQuarterState = new NoQuarterState(this);
     hasQuarterState = new HasQuarterState(this);
     soldState = new SoldState(this);
+    outofOrderState = new OutOfOrderState(this);
     
     this.count=count;
     if (count>0) {
@@ -35,6 +38,9 @@ public class GumballMachine {
   public void turnCrank() {
     state.turnCrank();
     state.dispense();
+  }
+  public void quarterError() {
+    state.quarterError();
   }
   void setState(State state) {
     this.state=state;
@@ -71,6 +77,9 @@ public class GumballMachine {
   }
   public State getSoldState() {
     return soldState;
+  }
+  public State getOutOfOrderState() {
+    return outofOrderState;
   }
   public String toString() {
     StringBuffer result = new StringBuffer();
